@@ -80,7 +80,9 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 
 現職の実績を主に見ていただきたいです。
 
-### GMOペパボ株式会社 (2022年09月 〜 )
+### アソビュー株式会社 (2025年04月 〜 )
+
+### GMOペパボ株式会社 (2022年09月 〜 2025年03月)
 
 <details>
 
