@@ -8,18 +8,19 @@ https://github.com/harukin721/harukin721
 
 ### 登壇
 
-- [「Pepabo Tech Conference 20 春のSREまつり」開催レポート - Pepabo Tech Portal](https://tech.pepabo.com/2023/04/28/pepabotech/)
 - [Road to SRE NEXT@京都 に登壇しました - Pepabo Tech Portal](https://tech.pepabo.com/2024/07/26/sre-next-kyoto/)
+- [「Pepabo Tech Conference 20 春のSREまつり」開催レポート - Pepabo Tech Portal](https://tech.pepabo.com/2023/04/28/pepabotech/)
 
 ### 執筆
 
-- [『入門 考える技術・書く技術 日本人のロジカルシンキング実践法』の読書会を開催しました - Pepabo Tech Portal](https://tech.pepabo.com/2022/12/14/reading-logical-thinking/)
-- [データに基づく統計手法を用いてNGINXのレートリミットを設定する - Pepabo Tech Portal](https://tech.pepabo.com/2023/12/15/nginx-rate-limit/)
-- [CloudNative Days Tokyo 2023に参加しました - Pepabo Tech Portal](https://tech.pepabo.com/2023/12/22/cloudnative-days-tokyo-2023/)
-- [日本CTO協会による合同ISUCON研修の紹介 - Pepabo Tech Portal](https://tech.pepabo.com/2024/02/16/isucon-2023/)
-- [Amazon RDS ブルー/グリーンデプロイを利用してMySQLのアップグレードをした話 - Pepabo Tech Portal](https://tech.pepabo.com/2024/05/10/rds-blue-green-deployment/)
+- [Amazon RDSの監査ログを保全する信頼性の高いソフトウェアの設計と実装について - Pepabo Tech Portal](https://tech.pepabo.com/2025/04/16/colorme-rds-audit-logs-s3/)
 - [技術部合同で合宿をしました！ in 沼津 - Pepabo Tech Portal](https://tech.pepabo.com/2024/07/24/development-camp-in-numazu/)
- 
+- [Amazon RDS ブルー/グリーンデプロイを利用してMySQLのアップグレードをした話 - Pepabo Tech Portal](https://tech.pepabo.com/2024/05/10/rds-blue-green-deployment/)
+- [日本CTO協会による合同ISUCON研修の紹介 - Pepabo Tech Portal](https://tech.pepabo.com/2024/02/16/isucon-2023/)
+- [CloudNative Days Tokyo 2023に参加しました - Pepabo Tech Portal](https://tech.pepabo.com/2023/12/22/cloudnative-days-tokyo-2023/)
+- [データに基づく統計手法を用いてNGINXのレートリミットを設定する - Pepabo Tech Portal](https://tech.pepabo.com/2023/12/15/nginx-rate-limit/)
+- [『入門 考える技術・書く技術 日本人のロジカルシンキング実践法』の読書会を開催しました - Pepabo Tech Portal](https://tech.pepabo.com/2022/12/14/reading-logical-thinking/)
+
 ## 概要
 
 - SRE, Platform, DevOps
