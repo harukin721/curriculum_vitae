@@ -135,7 +135,7 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - 5分おきに EventBridge Scheduler が Step Functions を呼び出し、Step Functions で ECS on Fargate が ECR からイメージを Pull して実行。実行成功時には専用の Slack チャンネルに通知、実行失敗時には CloudWatch Alarm と PagerDuty を連携させて Slack チャンネルにオンコール通知を実施。
 - Step Functions では、Primary DB と Replica DB の監査ログ取得において、Replica DB 数の変動に柔軟に対応できる仕組みを Terraform で構築・管理。
 - CloudWatch Alarm の Description にはオンコールドキュメントを追加し、オンコール担当者が迷わず対応できるように整備。
-- **この取り組みのより詳細な内容は後日テックブログに公開予定です。**
+- この取り組みを [Amazon RDSの監査ログを保全する信頼性の高いソフトウェアの設計と実装について - Pepabo Tech Portal](https://tech.pepabo.com/2025/04/16/colorme-rds-audit-logs-s3/) としてテックブログに公開。公開後は 30 件以上のはてなブックマークを獲得。
 
 #### Amazon RDS for MySQL 8.0 のブルー/グリーンデプロイによるアップグレード 【 AWS / MySQL 】
 
@@ -251,6 +251,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - 特定のサービスプロバイダ宛てのメール送信失敗を検知する仕組みを導入
 - メール送信失敗時の対応としてメールリレーサーバーを経由する仕組みを導入
 - Terraform Import を利用して VM と Terraform の差分を埋める対応
+- メールサーバーに rspamd の rb_modules 導入
+- rspamd log を、fluentd を介して、BigQuery に転送対応
 
 </details>
 
