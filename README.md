@@ -100,8 +100,11 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 
 - Argo Workflows を最新バージョン（v3.6.5）にアップグレード
 - Datadog Agent を最新バージョン（v7.64.3）にアップグレード
+- EKS Cluster v1.30.0 のバージョンアップグレード
 - Argo CD のサイドカープラグインに helmfile-plugin を追加
 - Argo CD のサイドカープラグインを helmfile-plugin, kustomize-plugin の並行運用
+- Serverless Framework EOL により、Terraform, Lambroll 移行
+- プログレッシブ対応（AnalysisTemplate により、Datadog Monitor をチェック）
 
 ### GMOペパボ株式会社 (2022年09月 〜 2025年03月)
 
