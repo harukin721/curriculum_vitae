@@ -4,6 +4,10 @@
 
 https://github.com/harukin721/harukin721
 
+## 保有資格
+
+https://www.credly.com/users/harukin721
+
 ## 登壇・執筆など
 
 ### 登壇
@@ -13,6 +17,8 @@ https://github.com/harukin721/harukin721
 
 ### 執筆
 
+- [Argo Rollouts と Datadog を活用した Progressive Delivery 実践 - asoview! Tech Blog](https://tech.asoview.co.jp/entry/2025/12/10/102023)
+- [AWS NAT Gateway の通信分析から始めるコスト最適化の取り組み - asoview! Tech Blog](https://tech.asoview.co.jp/entry/2025/11/12/163350)
 - [Amazon RDSの監査ログを保全する信頼性の高いソフトウェアの設計と実装について - Pepabo Tech Portal](https://tech.pepabo.com/2025/04/16/colorme-rds-audit-logs-s3/)
 - [技術部合同で合宿をしました！ in 沼津 - Pepabo Tech Portal](https://tech.pepabo.com/2024/07/24/development-camp-in-numazu/)
 - [Amazon RDS ブルー/グリーンデプロイを利用してMySQLのアップグレードをした話 - Pepabo Tech Portal](https://tech.pepabo.com/2024/05/10/rds-blue-green-deployment/)
@@ -28,7 +34,6 @@ https://github.com/harukin721/harukin721
 - Web サービスの SLI / SLO の監視運用の経験があります。
 - 小規模〜大規模サービスの新規開発や、サービスのリプレイス経験があります。
 - AWS のコスト削減
-- ※ フロントエンドの開発経験はほとんどありません。
 
 ## スキル
 
@@ -118,6 +123,8 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 - 店舗総数：約5万店舗
 - 流通総額：約2000億円
 
+---
+
 #### CentOS7 撤退のプロジェクトによる Ubunntu 移行 【 OpenStack / Terraform / Puppet 】
 
 ##### 担当業務
@@ -130,6 +137,8 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 - Terraform 管理の柔軟性向上を図るため、CentOS VM の count 管理を Ubuntu VM では for_each に変更。既存の Puppet コードが CentOS の yum パッケージに依存していたため、Ubuntu の deb パッケージにも対応可能な OS 分岐を追加。
 - OpenStack Octavia の Load Balancer にて、Ubuntu VM 用のメンバーを新規作成し、CentOS VM に影響を与えず段階的なカナリアリリースを実施。
 - Ubuntu VM では柔軟に weight を調整できるようにしたため、1台ずつ小さな weight からサービスインし、並行運用期間中はエラー監視と調整を行いながら、最終的にサービスに影響を与えることなく、Ubuntu VM の 100% リリースを無事に完了。
+
+---
 
 #### AWS インフラコスト削減 【 AWS / Go / GitHub Actions 】
 
@@ -161,6 +170,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - CloudWatch Alarm の Description にはオンコールドキュメントを追加し、オンコール担当者が迷わず対応できるように整備。
 - この取り組みを [Amazon RDSの監査ログを保全する信頼性の高いソフトウェアの設計と実装について - Pepabo Tech Portal](https://tech.pepabo.com/2025/04/16/colorme-rds-audit-logs-s3/) としてテックブログに公開。公開後は 30 件以上のはてなブックマークを獲得。
 
+---
+
 #### Amazon RDS for MySQL 8.0 のブルー/グリーンデプロイによるアップグレード 【 AWS / MySQL 】
 
 ##### 担当業務
@@ -173,6 +184,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - Amazon RDS のアップグレード手法として、インプレースアップグレードとブルー/グリーンデプロイの2つの選択肢を比較検討。それぞれのメリット・デメリットを整理し、事業部と協議の上、リスクを最小限に抑えられるブルー/グリーンデプロイを選定。
 - Amazon RDS 特有のファーストタッチレイテンシーへの対策を検討し、サービスへの影響を排除するために事前に徹底した検証を実施。また、AWS 公式ドキュメントに記載されたブルー/グリーンデプロイの「通常、ダウンタイムは1分未満」という情報の妥当性を確認。ルー/グリーンデプロイのアップグレードのプロセスを社内外に共有。
 - この取り組みを [Amazon RDS ブルー/グリーンデプロイを利用してMySQLのアップグレードをした話 - Pepabo Tech Portal](https://tech.pepabo.com/2024/05/10/rds-blue-green-deployment/) としてテックブログに公開。公開後は 60 件以上のはてなブックマークを獲得。
+
+---
 
 #### Gmail ガイドライン対応(OpenDKIM,OpenARC 導入) 【 Terraform / Puppet 】
 
@@ -187,6 +200,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - メールサーバーの運用基盤として使用している VM 環境に対し、Puppet を用いて OpenDKIM、OpenARC の設定をコード化。さらに、Serverspec を用いたインフラテストを導入し、設定の正確性を担保。
 - メールヘッダーを解析し、意図した認証を正確に通すことで、Gmail ガイドラインの要件に準拠。他のサービスに対しても、同様の対応を展開。
 
+---
+
 #### NGINX のホスト、IPアドレス、User-Agent などレートリミットを実装 【 Puppet / NGINX 】
 
 ##### 担当業務
@@ -200,6 +215,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - アクセスログデータを基に統計手法を活用し、適切なレートリミット値を設計。先輩エンジニアの助言を受けつつ、標準偏差を参考に異常アクセスを効率的に制限するアプローチを採用し、具体的な数値を算出。これらの知見を [Nginx のレートリミットの値に標準偏差を活用 - harukin721](https://harukin721.hatenablog.com/entry/2023/11/20/232840) にまとめ、社内外に共有。
 - レートリミット導入後、エンドポイントのレイテンシ悪化が大幅に改善され、サービス全体の安定性向上に貢献。この取り組みを [データに基づく統計手法を用いてNGINXのレートリミットを設定する - Pepabo Tech Portal](https://tech.pepabo.com/2023/12/15/nginx-rate-limit/) としてテックブログに公開。公開後は約 40 件のはてなブックマークを獲得。
 
+---
+
 #### Kubernetes の Datadog 導入 【 Kubernetes / Datadog 】
 
 ##### 担当業務
@@ -212,6 +229,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - Kubernetes クラスタ内の Node 構成や役割を把握し、リソース使用状況や重要度を基にモニタリング対象 Node を選定。特定 Node のみを対象とすることで、インフラコストを抑えつつ重要な監視を実現。
 - Kubernetes のラベル機能を活用し、Datadog Agent を特定の Node にのみデプロイ。DaemonSet を用いて、Node Selector や Node Affinity を組み合わせた柔軟なデプロイを実現。これらの理解を深める過程でブログ記事「[Node Affinity と Node Selector - harukin721](https://harukin721.hatenablog.com/entry/2023/07/18/224439) を作成し、知識を整理して社内へ共有。
 - Datadog を通じて得たモニタリングデータを分析し、サービスのパフォーマンスボトルネックの可視化を実現。
+
+---
 
 #### Kubernetes のクラスタアップデート 【 Kubernetes / OpenStack / AWS 】
 
@@ -236,6 +255,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
   - [ひとり「トラブルシューティングから学ぶk8s勉強会」Part2 - harukin721](https://harukin721.hatenablog.com/entry/2023/04/24/144057)
   - [ひとり「トラブルシューティングから学ぶk8s勉強会」Part3 - harukin721](https://harukin721.hatenablog.com/entry/2023/04/25/001146)
 
+---
+
 #### メールサーバの移設対応 【 Terraform / Puppet / Serverspec 】
 
 ##### 担当業務
@@ -248,6 +269,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - メールサーバーは VM で運用しており、構成管理は Puppet、インフラテストは Serverspec で行った。入社 3 ヶ月後での対応であり、Terraform、Puppet、Serverspec といった技術スタックのキャッチアップを行いながら進めたが、無事完了。
 - 過去のメールログを分析し、メールの利用率が低い時間帯を特定し、CS チームと協議し、メールサービスの影響を最小限に抑えてメンテナンスを実施。
 - メールサーバーログのローテーション設定が不完全であることを発見し、設定を改善。Puppet の hieradata におけるパラメーター定義をクラスパラメーターに置き換えることで、データ結合を改善し、メンテナンス性を向上。
+
+---
 
 #### その他 (2022年09月 〜 )
 
@@ -278,6 +301,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - メールサーバーに rspamd の rb_modules 導入
 - rspamd log を、fluentd を介して、BigQuery に転送対応
 
+---
+
 </details>
 
 ### 株式会社OKAN (2021年09月 〜 2022年08月)
@@ -285,6 +310,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 <details>
 
 <summary>2つのプロジェクト</summary>
+
+---
 
 #### 複数の既存システムの改修、ITGC 関連業務 【 Ruby on Rails / TypeScript / AWS / Docker 】 (2022年02月 〜 2022年08月)
 
@@ -307,6 +334,8 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - 効率的な問題解決: 「15分ルール」を設定し、自力で調査を進める一方、必要に応じて適切に質問することで、先輩エンジニアの時間を無駄にしないよう配慮し、業務効率と学習効率の向上を図った。
 - ITGC関連業務: IPO に向けたタスクをファイナンスグループなどの関係者と連携し、EC2 や RDS のバックアップ整備などを担当した。ITGC 関連のドキュメント作成やワークフロー整備も行った。
 - プロジェクト管理: Backlog を用いたタスク管理や進捗管理を実施し、スクラム開発で行った。
+
+---
 
 #### AWS を使用したインフラ設計・構築 【 AWS 】 (2021年09月 〜 2022年01月)
 
@@ -333,13 +362,17 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - プロジェクト管理: Backlog を活用したタスク管理や進捗管理を行い、スクラム開発を円滑に進行。チーム内で課題の共有も行った。
 - 参考リソース: この業務に関する内容は、かつて Wantedly の記事として公開していたが、現在はアーカイブとなっている。記事のバックアップを  [curriculum_vitae/wantedly at main · harukin721/curriculum_vitae](https://github.com/harukin721/curriculum_vitae/tree/main/wantedly) に保存している。なお、業務全般で [AWSコンテナ設計・構築[本格]入門 | SBクリエイティブ](https://www.sbcr.jp/product/4815607654/) にとても助けられました。
 
+---
+
 </details>
 
-### 株式会社アップロード (2020年04月 〜 2021年08月)
+### 非公開 (2020年04月 〜 2021年08月)
 
 <details>
 
 <summary>1つのプロジェクト</summary>
+
+---
 
 #### 大手電力会社 一般家庭の電力需供量の実証実験 【 Java / MySQL 】 (2020年07月 〜 2021年08月)
 
@@ -354,5 +387,7 @@ AWS 提唱のクラウド利用費用最適化を進めるためのフレーム�
 - 在籍中に https://github.com/harukin721/harukin721 にある AWS 認定資格や LPIC-1 を取得。
 - Linux、AWS、Docker、Github を学んでいた。
 - Ruby on Rails を活用して Web アプリケーションを作成し、AWS コンソールから EC2 を構築してデプロイ。
+
+---
 
 </details>
