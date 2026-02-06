@@ -73,7 +73,7 @@ Terraform | Docker | Ansible | Puppet | Helm |
 
 ### CI/CD
 
-GitHub Actions | Argo CD |
+GitHub Actions | CircleCI | Argo CD |
 
 ### その他
 
@@ -89,7 +89,7 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 
 入社時からアソビューの SRE をしています。
 
-#### WIP 【 WIP 】
+#### プログレッシブデリバリーの導入【 AWS / Argo CD / Argo Rollouts / Istio 】
 
 ##### 担当業務
 
