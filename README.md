@@ -31,9 +31,11 @@ https://www.credly.com/users/harukin721
 
 - SRE, Platform, DevOps
 - パブリッククラウド(AWS)とプライベートクラウド(OpenStack)のマルチクラウド環境でのシステム保守・運用
-- Web サービスの SLI / SLO の監視運用の経験があります。
-- 小規模〜大規模サービスの新規開発や、サービスのリプレイス経験があります。
+- Kubernetes(EKS / OpenStack on Kubernetes)のクラスタ運用、Argo Rollouts を用いた Progressive Delivery の導入
+- Web サービスの SLI / SLO の監視運用
+- 小規模〜大規模サービスの新規開発、サービスのリプレイス
 - AWS のコスト削減
+- テックブログ執筆・登壇による技術的知見の発信
 
 ## スキル
 
@@ -41,53 +43,63 @@ https://www.credly.com/users/harukin721
 
 <summary>実務で使用した技術のみを記載しています。</summary>
 
-### 言語
+### Infrastructure
 
-Go | Ruby | Python | JavaScript | Java | 
+Linux | OpenStack | Docker | Kubernetes | NGINX | Terraform | Ansible | Puppet | Helm |
 
-### フレームワーク等
+### CI/CD & Monitoring
 
-Ruby on Rails | 
-
-### RDB/NoSQL
-
-MySQL | Redis | Memcached | 
-
-<!-- https://findy-tools.io/articles/2024-tech-stack/1 -->
+GitHub Actions | CircleCI | Argo CD | Argo Rollouts | Datadog | Mackerel | Prometheus | Grafana | Sentry | Fluentd |
 
 ### AWS
 
-VPC | S3 | CloudFront | Lambda | ELB | EC2 | ECS | Fargate | EKS(Kubernetes) | Route53 | IAM | RDS(MySQL) | Aurora | ElastiCache(Redis|Memcached) | Kinesis | Kinesis Firehose | SQS | SNS | SES | CloudFormation | CodePipeline(Blue/Green Deployment) | CloudWatch | CloudTrail | Direct Connect | Secret Manager | Parameter Store | External Secrets | VPC Peering | VPC Endpoint | AWS Organizations | Step Functions | EventBridge Scheduler | 
+EC2 | Auto Scaling | ECS / Fargate | ECR | EKS(Kubernetes) | Lambda | API Gateway | S3 | RDS(MySQL) / Aurora | DynamoDB | ElastiCache(Redis) | Kinesis | Data Firehose | Athena | OpenSearch Service | Glue | VPC | ELB | CloudFront | Route 53 | Direct Connect | VPC Peering / Endpoint | WAF & Shield | IAM | KMS | Secrets Manager | Parameter Store | GuardDuty | Inspector | Control Tower | SQS | SNS | SES | EventBridge | CodeCommit | CodeBuild | CodeDeploy | CodePipeline | CloudWatch | CloudTrail | CloudFormation | Step Functions | Organizations | External Secrets |
 
-### インフラ
+### Languages
 
-Openstack | Kubernetes | Docker | NGINX  | Consul |
+Go | TypeScript | Java | Ruby |
 
-### 監視・モニタリング
+### Data
 
-Datadog | Prometheus | Grafana | Mackerel | Sentry | Fluentd | Redash |
-
-### 環境構築
-
-Terraform | Docker | Ansible | Puppet | Helm |
-
-### CI/CD
-
-GitHub Actions | CircleCI | Argo CD |
-
-### その他
-
-GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistrano |
+MySQL | PostgreSQL | Redis | Redash |
 
 </details>
 
 ## 主な業務経歴
 
-現職の実績を主に見ていただきたいです。
+### 副業（非公開） (2026年04月 〜 )
+
+#### LLM オブザーバビリティプラットフォーム Langfuse v3 のインフラ構築 【 AWS ECS / Terraform / ecspresso 】
+
+##### 担当業務
+
+- LLM アプリケーションのトレース・評価・プロンプト管理を担う OSS「Langfuse」v3 の AWS インフラを設計・構築
+- Terraform + Terragrunt で IaC 管理し、ecspresso でタスク定義のデプロイを管理
+
+##### 取り組み
+
+- Langfuse v3 は ClickHouse・Valkey（ElastiCache）・S3 を必要とする構成のため、ECS Fargate 上に Web・Worker・ClickHouse の 3 コンテナを配置し、コンテナ間通信は ECS Service Connect で解決。
+- Worker が使用する BullMQ のキュー基盤として ElastiCache を選定する際、BullMQ がメモリ不足時のキュージョブ削除を防ぐため `maxmemory-policy=noeviction` が必須であることを調査し、この設定を変更できない Serverless ではなく Provisioned を採用。
+- RDS マスターユーザーのパスワードローテーションで接続断が発生。原因は DATABASE_URL がマスターユーザーを参照していたことと特定し、Langfuse 専用の DB ユーザー（langfuse）を作成して解消。
+- SES を使ったトランザクションメール（招待・パスワードリセット）の配信基盤を構築。DKIM レコードの DNS 登録・検証まで一貫して対応し、独自ドメイン宛へのメール送信を確立。
+
+---
+
+#### OCR プロダクトの保守・機能改善 【 TypeScript / Python / MySQL 】
+
+##### 担当業務
+
+- OCR プロダクトの既存システムに対するバグ修正・機能改善
+
+##### 取り組み
+
+- チケット駆動開発のもと、Issue 単位でタスクを管理しながら機能改善・バグ修正を継続的に推進
 
 ### アソビュー株式会社 (2025年04月 〜 )
 
-入社時からアソビューの SRE をしています。
+入社時から**アソビュー**！の SRE / Platform Engineer をしています。
+- 月間PV：3,800万（2025年3月時点）
+- 会員数：1,800万人（2025年3月時点）
 
 #### プログレッシブデリバリーの導入【 AWS / Argo CD / Argo Rollouts / Istio 】
 
@@ -99,17 +111,21 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 
 - WIP
 
+---
+
 #### その他 (2025年04月 〜 )
 
 ##### 担当業務
 
-- Argo Workflows を最新バージョン（v3.6.5）にアップグレード
-- Datadog Agent を最新バージョン（v7.64.3）にアップグレード
-- EKS Cluster v1.30.0 のバージョンアップグレード
+- EKS クラスターのバージョンアップグレード
+- Argo CD, Argo Workflows, Datadog Agent, External Secrets などのバージョンアップグレード
 - Argo CD のサイドカープラグインに helmfile-plugin を追加
 - Argo CD のサイドカープラグインを helmfile-plugin, kustomize-plugin の並行運用
+- モノレポ環境（Nx）における CircleCI から GitHub Actions への移行
+- NGINX の Dockerfile ベースから CNB（Cloud Native Buildpacks）への移行
 - Serverless Framework EOL により、Terraform, Lambroll 移行
-- プログレッシブ対応（AnalysisTemplate により、Datadog Monitor をチェック）
+- 社内向け IDP（Internal Developer Platform）の API 開発（Java）
+- BASIC 認証・IP 制限対応（NGINX によるアクセス制限、CloudFront Functions による IP 制限）
 
 ### GMOペパボ株式会社 (2022年09月 〜 2025年03月)
 
@@ -119,9 +135,9 @@ GitHub | GitHub Copilot | BitBucket | Slack | Notion | Backlog | esa | Capistran
 
 <br>
 
-入社時から国内最大級の ECサイト構築サービスである**カラーミーショップ**の SRE をしています。
-- 店舗総数：約5万店舗
-- 流通総額：約2000億円
+入社時から国内最大級の ECサイト構築サービスである**カラーミーショップ**の SRE / Platform Engineer をしています。
+- 店舗総数：約5万店舗（2025年3月時点）
+- 流通総額：約2,000億円（2025年3月時点）
 
 ---
 
