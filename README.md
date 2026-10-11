@@ -114,16 +114,56 @@ MySQL | PostgreSQL | Redis | Redash |
 
 ---
 
+#### EKS クラスターのバージョンアップグレード 【 Kubernetes / AWS EKS / Argo CD / Claude Code 】
+
+##### 担当業務
+
+- AWS EKS クラスターを v1.32 → v1.33 → v1.34 へ段階的にアップグレード（ノード 75 台、Pod 約 1,200 規模）
+- EKS のバージョンアップグレードに合わせて、Argo CD, Argo Workflows, Datadog Agent, External Secrets などの周辺コンポーネントのバージョンアップグレードを実施
+
+##### 取り組み
+
+- Claude Code を活用し、リリースノートに基づく影響調査や、サブエージェントによる 10 種類以上の周辺コンポーネントの互換性調査を並行実施。AI の提案は公式ドキュメントで裏取りし、最終判断は自身で行った。
+- `kubectx --readonly` による誤操作防止や前後比較レポートの作成など、安全性と作業証跡を担保しながら本番環境への影響なく完了。
+- この取り組みを [Claude Codeを活用した効率的で安全なEKSアップグレード ――互換性調査から更新後の確認まで - gihyo.jp](https://gihyo.jp/article/2026/09/amazon-eks-update-with-claude-code) として gihyo.jp に寄稿。
+
+---
+
+#### Argo CD の Config Management Plugin による Kustomize から Helmfile への移行 【 Kubernetes / Argo CD / Helmfile / Kustomize 】
+
+##### 担当業務
+
+- 3rd Party（Argo CD, Datadog Agent などの OSS）は Helmfile、1st Party（自社アプリケーション）は Kustomize と混在していたマニフェスト管理を Helmfile に統一し、運用・認知負荷を軽減
+
+##### 取り組み
+
+- Argo CD の repo-server に Config Management Plugin のサイドカーとして helmfile-plugin を追加し、既存の kustomize-plugin と並行運用できる構成を構築。
+- ApplicationSet で Application ごとに利用するプラグインを指定し、問題があれば Kustomize に切り戻せる状態を保ちながら順次切り替え。
+- 移行完了後はデフォルトのプラグインを Helmfile に変更し、EKS 上のすべてのアプリケーションを Helmfile に統一。
+- この取り組みを [Kustomize から Helmfile への移行 - harukin721](https://harukin721.hatenablog.com/entry/2025/10/11/152804) として個人ブログに公開。
+
+---
+
+#### NGINX アプリケーションの Dockerfile から Cloud Native Buildpacks への移行 【 Docker / Cloud Native Buildpacks / NGINX 】
+
+##### 担当業務
+
+- 複数の NGINX アプリケーションがそれぞれ個別の Dockerfile を持っており、ベースイメージの更新やセキュリティ対策を各 Dockerfile ごとに行う必要があったため、Cloud Native Buildpacks（CNB）へ移行
+
+##### 取り組み
+
+- 公式の NGINX Buildpack は NGINX 本体のリリースへの追従が遅く、緊急の脆弱性パッチに即応できないため、自前の NGINX Buildpack で Ubuntu ベースのイメージに NGINX をインストールする方式を採用。当初は CNB 移行の見送りも検討したが、CTO の助言を受けてこの方式で移行を実現。
+- 各アプリケーションの Dockerfile を廃止し、共通の NGINX Buildpack でイメージをビルドする構成に統一。
+- 非 root 化に伴い待ち受けポートを 80 から 8080 に変更するなど、既存の NGINX サービスを停止することなく段階的に移行。
+- 非 root の cnb ユーザーでの実行が標準となり、Dockerfile の深い知識に依存せずセキュアなイメージを作成できるようになった。また、NGINX のバージョンアップを共通の Buildpack 側で行えるようになり、次回以降のバージョンアップが容易になった。
+
+---
+
 #### その他 (2025年04月 〜 )
 
 ##### 担当業務
 
-- EKS クラスターのバージョンアップグレード
-- Argo CD, Argo Workflows, Datadog Agent, External Secrets などのバージョンアップグレード
-- Argo CD のサイドカープラグインに helmfile-plugin を追加
-- Argo CD のサイドカープラグインを helmfile-plugin, kustomize-plugin の並行運用
 - モノレポ環境（Nx）における CircleCI から GitHub Actions への移行
-- NGINX の Dockerfile ベースから CNB（Cloud Native Buildpacks）への移行
 - Serverless Framework EOL により、Terraform, Lambroll 移行
 - 社内向け IDP（Internal Developer Platform）の API 開発（Java）
 - BASIC 認証・IP 制限対応（NGINX によるアクセス制限、CloudFront Functions による IP 制限）
