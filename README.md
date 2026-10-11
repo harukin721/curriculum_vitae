@@ -17,6 +17,7 @@ https://www.credly.com/users/harukin721
 
 ### 執筆
 
+- [Claude Codeを活用した効率的で安全なEKSアップグレード ――互換性調査から更新後の確認まで | gihyo.jp](https://gihyo.jp/article/2026/09/amazon-eks-update-with-claude-code)
 - [Argo Rollouts と Datadog を活用した Progressive Delivery 実践 - asoview! Tech Blog](https://tech.asoview.co.jp/entry/2025/12/10/102023)
 - [AWS NAT Gateway の通信分析から始めるコスト最適化の取り組み - asoview! Tech Blog](https://tech.asoview.co.jp/entry/2025/11/12/163350)
 - [Amazon RDSの監査ログを保全する信頼性の高いソフトウェアの設計と実装について - Pepabo Tech Portal](https://tech.pepabo.com/2025/04/16/colorme-rds-audit-logs-s3/)
