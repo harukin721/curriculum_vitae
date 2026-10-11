@@ -70,6 +70,12 @@ MySQL | PostgreSQL | Redis | Redash |
 
 ### 副業（非公開） (2026年04月 〜 )
 
+<details>
+
+<summary>複数のプロジェクト</summary>
+
+<br>
+
 #### LLM オブザーバビリティプラットフォーム Langfuse v3 のインフラ構築 【 AWS ECS / Terraform / ecspresso 】
 
 ##### 担当業務
@@ -95,6 +101,18 @@ MySQL | PostgreSQL | Redis | Redash |
 ##### 取り組み
 
 - チケット駆動開発のもと、Issue 単位でタスクを管理しながら機能改善・バグ修正を継続的に推進
+
+---
+
+#### その他 (2026年04月 〜 )
+
+##### 担当業務
+
+- インシデント調査の自動化に向けた AWS DevOps Agent の導入設計と GitHub 連携の構築
+
+---
+
+</details>
 
 ### アソビュー株式会社 (2025年04月 〜 )
 
